@@ -6,7 +6,7 @@ with open('./input.txt') as file:
 elves, curElf = [], 0
 
 for line in lines:
-    if line == '\r\n':
+    if line == '\n':
         elves.append(curElf)
         curElf = 0
     else:
