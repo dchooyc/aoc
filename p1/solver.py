@@ -6,7 +6,7 @@ with open('./input.txt') as file:
 maxElf, curElf = 0, 0
 
 for line in lines:
-    if line == '\r\n':
+    if line == '\n':
         if curElf > maxElf:
             maxElf = curElf
         curElf = 0
