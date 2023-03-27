@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	input := convFile("./input.txt")
+	input := convFile("../input.txt")
 	fmt.Println(input)
 }
 
