@@ -1,18 +1,12 @@
-package main
+package utils
 
 import (
 	"bufio"
-	"fmt"
 	"log"
 	"os"
 )
 
-func main() {
-	input := convFile("../input.txt")
-	fmt.Println(input)
-}
-
-func convFile(src string) []string {
+func ConvFile(src string) []string {
 	res := []string{}
 
 	file, err := os.Open(src)
