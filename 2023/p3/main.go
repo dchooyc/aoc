@@ -21,7 +21,7 @@ func sumParts(lines []string) int {
 		cur, adjacent := 0, false
 		for j := 0; j < len(line); j++ {
 			char := line[j]
-			if isNum(char) {
+			if isInt(char) {
 				cur *= 10
 				cur += int(line[j] - '0')
 				if adjSymbol(lines, i, j) {
@@ -59,7 +59,7 @@ func adjSymbol(lines []string, i, j int) bool {
 		x, y := i+dir[0], j+dir[1]
 		if x >= 0 && x < len(lines) && y >= 0 && y < len(lines[0]) {
 			char := lines[x][y]
-			if char != '.' && !isNum(char) {
+			if char != '.' && !isInt(char) {
 				return true
 			}
 		}
@@ -68,11 +68,8 @@ func adjSymbol(lines []string, i, j int) bool {
 	return false
 }
 
-func isNum(char byte) bool {
-	if char >= '0' && char <= '9' {
-		return true
-	}
-	return false
+func isInt(char byte) bool {
+	return char >= '0' && char <= '9'
 }
 
 func sumGears(lines []string) int {
@@ -82,7 +79,7 @@ func sumGears(lines []string) int {
 		cur, adjacentGears := 0, make(map[string]bool)
 		for j := 0; j < len(line); j++ {
 			char := line[j]
-			if isNum(char) {
+			if isInt(char) {
 				cur *= 10
 				cur += int(line[j] - '0')
 				ag := adjGears(lines, i, j)
