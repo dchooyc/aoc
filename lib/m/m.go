@@ -21,6 +21,27 @@ func Abs(x int) int {
 	return x
 }
 
+func Max64(a, b int64) int64 {
+	if a > b {
+		return a
+	}
+	return b
+}
+
+func Min64(a, b int64) int64 {
+	if a < b {
+		return a
+	}
+	return b
+}
+
+func Abs64(x int64) int64 {
+	if x < 0 {
+		return -x
+	}
+	return x
+}
+
 func ArrMax(arr []int) int {
 	max := arr[0]
 	for i := 1; i < len(arr); i++ {
@@ -39,6 +60,30 @@ func ArrMin(arr []int) int {
 
 func ArrSum(arr []int) int {
 	sum := 0
+	for i := 0; i < len(arr); i++ {
+		sum += arr[i]
+	}
+	return sum
+}
+
+func ArrMax64(arr []int64) int64 {
+	max := arr[0]
+	for i := 1; i < len(arr); i++ {
+		max = Max64(max, arr[i])
+	}
+	return max
+}
+
+func ArrMin64(arr []int64) int64 {
+	min := arr[0]
+	for i := 1; i < len(arr); i++ {
+		min = Min64(min, arr[i])
+	}
+	return min
+}
+
+func ArrSum64(arr []int64) int64 {
+	var sum int64
 	for i := 0; i < len(arr); i++ {
 		sum += arr[i]
 	}
