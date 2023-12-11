@@ -21,6 +21,22 @@ func Abs(x int) int {
 	return x
 }
 
+func Gcd(num, den int) int {
+	if num < den {
+		num, den = den, num
+	}
+	rem := num % den
+	for rem != 0 {
+		num, den = den, rem
+		rem = num % den
+	}
+	return den
+}
+
+func Lcm(a, b int) int {
+	return (a * b) / Gcd(a, b)
+}
+
 func Max64(a, b int64) int64 {
 	if a > b {
 		return a
@@ -40,6 +56,22 @@ func Abs64(x int64) int64 {
 		return -x
 	}
 	return x
+}
+
+func Gcd64(num, den int64) int64 {
+	if num < den {
+		num, den = den, num
+	}
+	rem := num % den
+	for rem != 0 {
+		num, den = den, rem
+		rem = num % den
+	}
+	return den
+}
+
+func Lcm64(a, b int64) int64 {
+	return (a * b) / Gcd64(a, b)
 }
 
 func ArrMax(arr []int) int {
